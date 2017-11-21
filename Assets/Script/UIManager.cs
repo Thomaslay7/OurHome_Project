@@ -5,10 +5,11 @@ using UnityEngine;
 public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject login,create,createprofil,choosetasks,choosegroceries,back,adds, family, groceries,tasks,rewards,calendar;
+	public GameObject login,create,createprofil,choosetasks,choosegroceries,back,adds, family, groceries,tasks,rewards,calendar,setting;
 	public GameObject btnNext,btnBack;
 
 	void Start () {
+		setting.transform.localScale = Vector3.zero;
 		login.transform.localScale = Vector3.zero;
 		create.transform.localScale = Vector3.zero;
 		family.transform.localScale = Vector3.zero;
@@ -25,6 +26,7 @@ public class UIManager : MonoBehaviour {
 
 	public void HideAll()
 	{
+		setting.transform.localScale = Vector3.zero;
 		login.transform.localScale = Vector3.zero;
 		create.transform.localScale = Vector3.zero;
 		family.transform.localScale = Vector3.zero;
@@ -127,6 +129,14 @@ public class UIManager : MonoBehaviour {
 		HideAll ();
 		groceries.transform.localScale = Vector3.one;
 		Debug.Log ("check family tasks");
+	}
+
+	public void showSetting()
+	{
+
+		HideAll ();
+		setting.transform.localScale = Vector3.one;
+		Debug.Log ("check family");
 	}
 	public void showAddProfilFamily()
 	{
