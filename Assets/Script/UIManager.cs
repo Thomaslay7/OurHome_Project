@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
 	public GameObject login,create,createprofil,choosetasks,choosegroceries,back,adds, family, groceries,tasks,rewards,calendar,setting;
-	public GameObject btnNext,btnBack;
+	public GameObject btnNext,btnBack, myaccount,sharepanel;
 
 	void Start () {
+		sharepanel.transform.localScale = Vector3.zero;
 		setting.transform.localScale = Vector3.zero;
 		login.transform.localScale = Vector3.zero;
 		create.transform.localScale = Vector3.zero;
@@ -22,10 +24,15 @@ public class UIManager : MonoBehaviour {
 		calendar.transform.localScale = Vector3.zero;
 		rewards.transform.localScale = Vector3.zero;
 		groceries.transform.localScale = Vector3.zero;
+		myaccount.transform.localScale = Vector3.zero;
+		//picture.SetActive(false);
 	}
 
 	public void HideAll()
 	{
+
+		sharepanel.transform.localScale = Vector3.zero;
+		//picture.SetActive(false);
 		setting.transform.localScale = Vector3.zero;
 		login.transform.localScale = Vector3.zero;
 		create.transform.localScale = Vector3.zero;
@@ -39,6 +46,7 @@ public class UIManager : MonoBehaviour {
 		calendar.transform.localScale = Vector3.zero;
 		rewards.transform.localScale = Vector3.zero;
 		groceries.transform.localScale = Vector3.zero;
+		myaccount.transform.localScale = Vector3.zero;
 	}
 	public void showOurHome()
 	{
@@ -146,5 +154,25 @@ public class UIManager : MonoBehaviour {
 		btnNext.transform.localScale=Vector3.zero;
 		createprofil.transform.localScale = Vector3.one;
 		Debug.Log ("check family");
+	}
+	/*public void slide()
+	{
+		HideAll ();
+		picture.SetActive(true);
+	}*/
+	public void showMyAccounts()
+	{
+
+		HideAll ();
+		myaccount.transform.localScale = Vector3.one;
+		Debug.Log ("check My account");
+	}
+	public void showSharePanel()
+	{
+
+		HideAll ();
+		setting.transform.localScale = Vector3.one;
+		sharepanel.transform.localScale = Vector3.one;
+		Debug.Log ("check panel");
 	}
 }
