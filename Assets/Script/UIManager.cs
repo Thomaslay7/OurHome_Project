@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
-	public GameObject login,create,createprofil,choosetasks,choosegroceries,back,adds, family, groceries,tasks,rewards,calendar,setting;
+	public GameObject TasksPref, GroceriesPref,household, notifications, preferences,login,create,createprofil,choosetasks,choosegroceries,back,adds, family, groceries,tasks,rewards,calendar,setting;
 	public GameObject btnNext,btnBack, myaccount,sharepanel;
 
 	void Start () {
@@ -25,6 +25,11 @@ public class UIManager : MonoBehaviour {
 		rewards.transform.localScale = Vector3.zero;
 		groceries.transform.localScale = Vector3.zero;
 		myaccount.transform.localScale = Vector3.zero;
+		preferences.transform.localScale = Vector3.zero;
+		household.transform.localScale = Vector3.zero;
+		notifications.transform.localScale = Vector3.zero;
+		GroceriesPref.transform.localScale = Vector3.zero;
+		TasksPref.transform.localScale = Vector3.zero;
 		//picture.SetActive(false);
 	}
 
@@ -47,6 +52,19 @@ public class UIManager : MonoBehaviour {
 		rewards.transform.localScale = Vector3.zero;
 		groceries.transform.localScale = Vector3.zero;
 		myaccount.transform.localScale = Vector3.zero;
+		preferences.transform.localScale = Vector3.zero;
+		household.transform.localScale = Vector3.zero;
+		notifications.transform.localScale = Vector3.zero;
+		GroceriesPref.transform.localScale = Vector3.zero;
+		TasksPref.transform.localScale = Vector3.zero;
+	}
+	public void close()
+	{
+		sharepanel.transform.localScale = Vector3.zero;
+
+		myaccount.transform.localScale = Vector3.one;
+		Debug.Log ("close");
+
 	}
 	public void showOurHome()
 	{
@@ -171,8 +189,38 @@ public class UIManager : MonoBehaviour {
 	{
 
 		HideAll ();
-		setting.transform.localScale = Vector3.one;
 		sharepanel.transform.localScale = Vector3.one;
 		Debug.Log ("check panel");
+	}
+	public void showPreferences()
+	{
+
+		HideAll ();
+		preferences.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		Debug.Log ("Preferences is open");
+	}
+	public void showHouseHoold()
+	{
+		HideAll ();
+		household.transform.localScale = Vector3.one;
+		Debug.Log ("Household is open");
+	}
+	public void showNotifications()
+	{
+		HideAll ();
+		notifications.transform.localScale = Vector3.one;
+		Debug.Log ("Notifications is open");
+	}
+	public void showGroceriesPref()
+	{
+		HideAll ();
+		GroceriesPref.transform.localScale = Vector3.one;
+		Debug.Log ("Groceries Preferences is open");
+	}
+	public void showTasksPref()
+	{
+		HideAll ();
+		TasksPref.transform.localScale = Vector3.one;
+		Debug.Log ("Tasks Preferences is open");
 	}
 }
